@@ -2,6 +2,7 @@
 <template>
 	<div class="home">
 		<img src="../../assets/logo.svg" />
+		<p>test</p>
 	</div>
 </template>
 
