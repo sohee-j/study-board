@@ -53,7 +53,7 @@ function onChange(item, index) {
 					</button>
 					<button
 						v-show="item.isModifyStatus"
-						@click="item.modifyStatus = false"
+						@click="item.isModifyStatus = false"
 					>
 						<i class="bi bi-x-square"></i>
 					</button>
