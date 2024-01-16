@@ -25,6 +25,22 @@ const router = createRouter({
 			name: 'todolist',
 			component: () => import('../view/project/TodoList.vue'),
 		},
+		{
+			path: '/posts',
+			component: () => import('@/components/posts/PostListView.vue'),
+		},
+		{
+			path: '/posts/create',
+			component: () => import('@/components/posts/PostCreateView.vue'),
+		},
+		{
+			path: '/posts/:id',
+			component: () => import('@/components/posts/PostDetailView.vue'),
+		},
+		{
+			path: '/posts/:id/edit',
+			component: () => import('@/components/posts/PostEditView.vue'),
+		},
 	],
 })
 

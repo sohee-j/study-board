@@ -17,10 +17,15 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
+						<router-link to="/" class="nav-link active">Home</router-link>
 					</li>
 					<li class="nav-item">
 						<router-link class="nav-link active" to="/study">Study</router-link>
+					</li>
+					<li class="nav-item">
+						<router-link class="nav-link active" to="/posts"
+							>게시글</router-link
+						>
 					</li>
 				</ul>
 			</div>
