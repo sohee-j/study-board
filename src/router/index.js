@@ -27,19 +27,29 @@ const router = createRouter({
 		},
 		{
 			path: '/posts',
+			name: 'PostList',
 			component: () => import('@/components/posts/PostListView.vue'),
 		},
 		{
 			path: '/posts/create',
+			name: 'PostCreate',
 			component: () => import('@/components/posts/PostCreateView.vue'),
 		},
 		{
 			path: '/posts/:id',
+			name: 'PostDetail',
 			component: () => import('@/components/posts/PostDetailView.vue'),
+			props: true,
+			// props: route => ({ id: parseInt(route.params.id) }),
 		},
 		{
 			path: '/posts/:id/edit',
+			name: 'PostEdit',
 			component: () => import('@/components/posts/PostEditView.vue'),
+		},
+		{
+			path: '/:pathMatch(.*)*',
+			component: () => import('@/view/NotFoundView.vue'),
 		},
 	],
 })
