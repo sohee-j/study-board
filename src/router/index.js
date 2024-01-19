@@ -1,7 +1,7 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-	history: createWebHistory('/study-board/'),
+	history: createWebHashHistory('/study-board/'),
 	routes: [
 		{
 			path: '/',
