@@ -1,5 +1,7 @@
 <script setup>
 import NavBar from './components/main/NavBar.vue'
+import { useAlert } from './composables/alert'
+const { alerts } = useAlert()
 </script>
 
 <template>
@@ -7,6 +9,7 @@ import NavBar from './components/main/NavBar.vue'
 	<main>
 		<router-view />
 	</main>
+	<AppAlert :items="alerts"></AppAlert>
 </template>
 
 <style lang="scss" scoped>
