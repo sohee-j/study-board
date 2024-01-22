@@ -15,10 +15,17 @@ const router = createRouter({
 		},
 		{
 			path: '/ex/0',
-			name: 'js',
-			beforeEnter() {
-				window.location.href = 'https://sohee-j.github.io/sh-todolist.io/'
-			},
+			name: 'VanillaJs',
+			component: () => import('../view/project/VanillaJs.vue'),
+			children: [
+				{
+					path: '/ex/0',
+					name: 'VanillaJs',
+					beforeEnter() {
+						window.location.href = 'https://sohee-j.github.io/sh-todolist.io/'
+					},
+				},
+			],
 		},
 		{
 			path: '/ex/1',
