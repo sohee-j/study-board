@@ -1,5 +1,7 @@
 <template>
-	<div>뒤로가기</div>
+	<div class="btn_wrap">
+		<button class="btn btn-secondary" @click="$router.go(-1)">뒤로가기</button>
+	</div>
 </template>
 
 <script setup>
