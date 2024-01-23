@@ -24,7 +24,7 @@
 					<PostItem
 						:title="item.title"
 						:content="item.content"
-						:create-at="item.createdAt"
+						:created-at="item.createdAt"
 						@click="getPage(item.id)"
 						@modal="openModal(item)"
 					></PostItem>

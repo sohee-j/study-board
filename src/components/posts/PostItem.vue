@@ -26,7 +26,7 @@ const props = defineProps({
 	content: {
 		type: String,
 	},
-	createAt: {
+	createdAt: {
 		type: [String, Date, Number],
 	},
 })
