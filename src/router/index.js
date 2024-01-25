@@ -22,7 +22,7 @@ const router = createRouter({
 					path: '/ex/0',
 					name: 'VanillaJs',
 					beforeEnter() {
-						window.location.href = 'https://sohee-j.github.io/sh-todolist.io/'
+						window.open('https://sohee-j.github.io/sh-todolist.io/')
 					},
 				},
 			],

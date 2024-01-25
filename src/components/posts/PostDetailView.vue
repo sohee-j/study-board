@@ -46,19 +46,19 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAxios } from '@/hooks/useAxios'
 import { useAlert } from '@/composables/alert'
-
-const { vAlert, vSuccess } = useAlert()
 
 const props = defineProps({
 	id: [String, Number],
 })
 
 const router = useRouter()
-
-const { data: posts, error, loading } = useAxios(`/posts/${props.id}`)
+const { vAlert, vSuccess } = useAlert()
+const url = computed(() => `/posts/${props.id}`)
+const { data: posts, error, loading } = useAxios(url)
 
 const {
 	error: removeError,

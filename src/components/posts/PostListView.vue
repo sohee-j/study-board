@@ -11,15 +11,19 @@
 			<hr class="my-4" />
 			<PostFilter
 				v-model:title="params.title_like"
-				v-model:limit="params._limit"
+				:limit="params._limit"
+				@update:limit="changeLimit"
 			/>
 		</div>
 		<hr class="my-4" />
 
 		<AppLoading v-if="loading" />
 		<AppError v-else-if="error" :message="'Error'" />
+		<template v-else-if="!isExist">
+			<p class="text-center py-5 text-muted">No Result</p>
+		</template>
 		<template v-else>
-			<AppGrid :items="posts">
+			<AppGrid :items="posts" col-class="col-12 col-md-6 col-lg-4">
 				<template v-slot="{ item }">
 					<PostItem
 						:title="item.title"
@@ -27,6 +31,7 @@
 						:created-at="item.createdAt"
 						@click="getPage(item.id)"
 						@modal="openModal(item)"
+						@preview="selectPreview(item.id)"
 					></PostItem>
 				</template>
 			</AppGrid>
@@ -47,10 +52,10 @@
 			/>
 		</Teleport>
 
-		<template v-if="posts && posts.length > 0">
+		<template v-if="previewId">
 			<hr class="my-4" />
 			<AppCard>
-				<PostDetailView :id="posts[0].id"></PostDetailView>
+				<PostDetailView :id="previewId"></PostDetailView>
 			</AppCard>
 		</template>
 	</div>
@@ -65,17 +70,23 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAxios } from '@/hooks/useAxios'
 
-// const posts = ref([])
+const previewId = ref(null)
+const selectPreview = id => (previewId.value = id)
 const router = useRouter()
 const params = ref({
 	_sort: 'createdAt',
-	_limit: 3,
+	_limit: 6,
 	_page: 1,
 	_order: 'DESC',
 	title_like: '',
 })
+const changeLimit = value => {
+	params.value._limit = value
+	params.value._page = 1
+}
 
 const { data: posts, error, loading, response } = useAxios('/posts', { params })
+const isExist = computed(() => posts.value && posts.value.length > 0)
 
 //pagination
 const totalCount = computed(() => response.value.headers['x-total-count'])

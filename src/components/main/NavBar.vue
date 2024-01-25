@@ -2,7 +2,7 @@
 <template>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary">
 		<div class="container-fluid">
-			<a class="navbar-brand" href="#">Navbar</a>
+			<router-link class="navbar-brand" to="/">Navba</router-link>
 			<button
 				class="navbar-toggler"
 				type="button"

@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "db": "json-server --watch db.json --port 5000 --delay 1000"
+    "db": "json-server --watch db.json --port 5000"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
@@ -17,6 +17,7 @@
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.3",
     "dayjs": "^1.11.10",
+    "pinia": "^2.1.7",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },

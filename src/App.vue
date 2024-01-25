@@ -1,16 +1,14 @@
-<script setup>
-import NavBar from './components/main/NavBar.vue'
-import { useAlert } from './composables/alert'
-const { alerts } = useAlert()
-</script>
-
 <template>
 	<NavBar></NavBar>
 	<main>
 		<router-view />
 	</main>
-	<AppAlert :items="alerts"></AppAlert>
+	<AppAlert></AppAlert>
 </template>
+
+<script setup>
+import NavBar from './components/main/NavBar.vue'
+</script>
 
 <style lang="scss" scoped>
 main {
