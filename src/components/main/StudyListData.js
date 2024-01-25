@@ -9,4 +9,9 @@ export default [
 		desc: 'VUE3 / 수정+완료 기능 추가',
 		date: '2024-01-12',
 	},
+	{
+		title: 'BLOG',
+		desc: 'VUE3',
+		date: '2024-01-25',
+	},
 ]

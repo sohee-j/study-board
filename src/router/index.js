@@ -33,6 +33,11 @@ const router = createRouter({
 			component: () => import('../view/project/TodoList.vue'),
 		},
 		{
+			path: '/ex/2',
+			name: 'Blog',
+			component: () => import('../view/project/BlogView.vue'),
+		},
+		{
 			path: '/posts',
 			name: 'PostList',
 			component: () => import('@/components/posts/PostListView.vue'),
