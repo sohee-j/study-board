@@ -32,11 +32,38 @@ const router = createRouter({
 			name: 'todolist',
 			component: () => import('../view/project/TodoList.vue'),
 		},
+		//blog
 		{
 			path: '/ex/2',
 			name: 'Blog',
 			component: () => import('../view/project/BlogView.vue'),
+			children: [
+				{
+					path: '',
+					name: 'BlogList',
+					component: () => import('../components/blogs/BlogList.vue'),
+				},
+				{
+					path: '/blog/write',
+					name: 'BlogWrite',
+					component: () => import('@/components/blogs/BlogWrite.vue'),
+				},
+				{
+					path: '/blog/:id',
+					name: 'BlogDetail',
+					component: () => import('@/components/blogs/BlogDetail.vue'),
+					props: true,
+				},
+				{
+					path: '/blog/:id/edit',
+					name: 'BlogEdit',
+					component: () => import('@/components/blogs/BlogEdit.vue'),
+					props: true,
+				},
+			],
 		},
+
+		// post
 		{
 			path: '/posts',
 			name: 'PostList',
